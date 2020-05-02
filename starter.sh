@@ -4,6 +4,7 @@
 #
 # Author: Atsushi Sakai (@Atsushi_twi)
 #
+set -e
 
 PLUGIN_DIR="/plugins/"
 CURRENT_DIR=$(pwd)
