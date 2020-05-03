@@ -1,3 +1,6 @@
+## 0.1.4 (May 03, 2020)
+  - ready to start using and add launcher
+
 ## 0.1.3 (May 03, 2020)
   - update bump script and starter
 
