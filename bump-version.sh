@@ -53,6 +53,7 @@ if [ -f VERSION ]; then
     echo $INPUT_STRING > VERSION
     echo "## $INPUT_STRING ($NOW)" > tmpfile
     git log --pretty=format:"  - %s" "v$BASE_STRING"...HEAD >> tmpfile
+    git log --pretty=format:"  - %s" "v$BASE_STRING"...HEAD > RELEASE_NOTE
     echo "" >> tmpfile
     echo "" >> tmpfile
     cat CHANGELOG.md >> tmpfile
@@ -62,8 +63,9 @@ if [ -f VERSION ]; then
     echo -e "$PUSHING_MSG"
     git add CHANGELOG.md VERSION
     git commit -m "Bump version to ${INPUT_STRING}."
-    git tag -a -m "Tag version ${INPUT_STRING}." "v$INPUT_STRING"
+    git tag -a -m "$RELEASE_NOTE" "v$INPUT_STRING"
     git push origin --tags
+    git push origin master
 else
     echo -e "${WARNING_FLAG} Could not find a VERSION file."
     echo -ne "${QUESTION_FLAG} ${CYAN}Do you want to create a version file and start from scratch? [${WHITE}y${CYAN}]: "
@@ -86,6 +88,7 @@ else
         git commit -m "Add VERSION and CHANGELOG.md files, Bump version to v0.1.0."
         git tag -a -m "Tag version 0.1.0." "v0.1.0"
         git push origin --tags
+        git push origin master
     fi
 fi
 
