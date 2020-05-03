@@ -26,7 +26,6 @@ function get_reversed_commit_history(){
     local num_commits=$2
     local -n commit_history=$3
     mapfile -t commit_history < <(git rev-list --max-count ${num_commits} --first-parent ${branch})
-    #[ $? -ne 0 ] && exit 1
 }
 
 #######################################
@@ -60,7 +59,7 @@ function search_branch_commit(){
             fi
         done
     done
-    echo "cannot find branch commit"
+    echo "Error: cannot find branch commit between ${current_branch} and ${target_branch}"
     exit 1
 }
 
@@ -79,7 +78,6 @@ function search_diff_files(){
     local -n rev=$2
     # get diff file names
     mapfile -t rev < <(git diff --name-only ${branch_commit})
-    #[ $? -ne 0 ] && exit 1
 }
 
 #####################################################
