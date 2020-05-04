@@ -138,7 +138,6 @@ function check_diff(){
 #####################################################
 # Load all scripts in the plugin directory
 # Globals:
-#   CURRENT_DIR: current directory
 #   PLUGIN_DIR: plugin directory
 # Arguments:
 #   None

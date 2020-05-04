@@ -27,5 +27,5 @@ function check_diff_py(){
         echo "Error: Your changes contain pycodestyle errors."
         exit 1
     fi
-    cd $0 # move back to the script dir
+    cd $SCRIPT_DIR
 }
