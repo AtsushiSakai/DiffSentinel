@@ -53,7 +53,7 @@ if [ -f VERSION ]; then
     echo $INPUT_STRING > VERSION
     echo "## $INPUT_STRING ($NOW)" > tmpfile
     git log --pretty=format:"  - %s" "v$BASE_STRING"...HEAD >> tmpfile
-    RELEASE_NOTE=$(git log --pretty=format:"  - %s" "v$BASE_STRING"...HEAD)
+    RELEASE_NOTE=$(git log --pretty=format:"  - %s" "v$BASE_STRING\n"...HEAD)
     echo "RELEASE_NOTE:$RELEASE_NOTE"
     echo "" >> tmpfile
     echo "" >> tmpfile
