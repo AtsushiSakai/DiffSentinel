@@ -167,6 +167,7 @@ function main(){
 	# move to this script dir
 	cd $(dirname "$0")
     SCRIPT_DIR=$(pwd)
+    echo "SCRIPT_DIR:${SCRIPT_DIR}"
 
 	local current_branch=${1:-'HEAD'}
 	echo "current_branch:${current_branch}"

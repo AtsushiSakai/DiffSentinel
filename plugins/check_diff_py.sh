@@ -18,6 +18,7 @@
 #######################################
 function check_diff_py(){
     echo "start check_diff_py"
+    echo "GIT_ROOT_DIR:${GIT_ROOT_DIR}"
     cd ${GIT_ROOT_DIR}
     local branch_commit=$1
     git diff -U0 ${branch_commit} -- '*'.py | pycodestyle --diff
@@ -27,5 +28,8 @@ function check_diff_py(){
         echo "Error: Your changes contain pycodestyle errors."
         exit 1
     fi
-    cd $SCRIPT_DIR
+    echo "Move back to ${SCRIPT_DIR}"
+    if [ -d "$SCRIPT_DIR" ]; then
+        cd ${SCRIPT_DIR}
+    fi
 }
