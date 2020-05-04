@@ -1,3 +1,8 @@
+## 0.1.6 (May 04, 2020)
+  - add debug info
+  - Bump version to 0.1.5.
+  - fix check success bug
+
 ## 0.1.5 (May 04, 2020)
   - fix check success bug
 
