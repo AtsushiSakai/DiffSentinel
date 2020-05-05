@@ -174,7 +174,7 @@ function main(){
 
 	local current_branch=${1:-'HEAD'}
 	echo "current_branch:${current_branch}"
-	local target_branch=${2:-'master'}
+	local target_branch=${2:-'origin/master'}
   echo "target_branch:${target_branch}"
 
 	load_plugins
