@@ -20,5 +20,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Run a example script
+      run: pwd
+      run: ls
       run: DiffSentinel/example/rundiffstylecheck.sh
 
