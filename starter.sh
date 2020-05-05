@@ -163,24 +163,27 @@ function load_plugins(){
 #   None
 #####################################################
 function main(){
-    echo "Start git_diff_checker!!"
+  echo "Start git_diff_checker!!"
+
+  echo "BASH_VERSION:${BASH_VERSION}"
+
 	# move to this script dir
 	cd $(dirname "$0")
-    SCRIPT_DIR=$(pwd)
-    echo "SCRIPT_DIR:${SCRIPT_DIR}"
+  SCRIPT_DIR=$(pwd)
+  echo "SCRIPT_DIR:${SCRIPT_DIR}"
 
 	local current_branch=${1:-'HEAD'}
 	echo "current_branch:${current_branch}"
 	local target_branch=${2:-'master'}
-    echo "target_branch:${target_branch}"
+  echo "target_branch:${target_branch}"
 
 	load_plugins
 
-    search_branch_commit ${current_branch} ${target_branch} branch_commit
-    search_diff_files ${branch_commit} diff_files
-    check_diff ${branch_commit} ${diff_files[@]}
+  search_branch_commit ${current_branch} ${target_branch} branch_commit
+  search_diff_files ${branch_commit} diff_files
+  check_diff ${branch_commit} ${diff_files[@]}
 
-    echo "Done!!"
+  echo "Done!!"
 }
 
 main "$@"

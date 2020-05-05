@@ -39,6 +39,6 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Run a example script
-      run: examples/rundiffstylecheck.sh
+      run: bash examples/rundiffstylecheck.sh
       
 
