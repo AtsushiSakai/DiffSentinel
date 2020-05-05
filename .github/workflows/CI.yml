@@ -20,5 +20,5 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Run a example script
-      run: ./example/rundiffstylecheck.sh
+      run: DiffSentinel/example/rundiffstylecheck.sh
 
