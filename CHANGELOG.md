@@ -1,3 +1,8 @@
+## 0.1.7 (May 05, 2020)
+  - fix CI
+  - Update CI.yml
+  - Add CI.yml (#3)
+
 ## 0.1.6 (May 04, 2020)
   - add debug info
   - Bump version to 0.1.5.
