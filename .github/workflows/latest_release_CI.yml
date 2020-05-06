@@ -21,6 +21,6 @@ jobs:
 
     # Runs a latest release
     - name: Run latest release script
-    run: bash examples/latest_release_check.sh
+      run: bash examples/latest_release_check.sh
       
 
