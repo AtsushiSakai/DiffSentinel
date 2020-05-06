@@ -26,8 +26,3 @@ jobs:
     - name: Run a example script
       run: /usr/local/bin/bash starter.sh
 
-    # Runs a latest release
-    #- name: Run a example script
-    #run: bash starter.sh
-      
-
